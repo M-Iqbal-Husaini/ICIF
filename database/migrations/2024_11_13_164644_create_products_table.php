@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('category');
             $table->text('description');
             $table->string('image');
+            $table->integer('discount')->nullable();
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Distributor;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,7 +18,7 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::create([
-            'name' => 'user1',
+            'name' => 'user',
             'email' => 'user@gmail.com',
             'password' => bcrypt('123456789'),
             'point' => 10000,
@@ -28,6 +29,22 @@ class DatabaseSeeder extends Seeder
             'username' => 'Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('123456789'),
+        ]);
+
+        Distributor::create([
+            'nama_distributor' => 'Nike',
+            'kota' => 'Pekanbaru',
+            'provinsi' => 'Riau',
+            'kontak' => ('081344332211'),
+            'email' => 'daunemas@gmail.com',
+        ]);
+
+        Distributor::create([
+            'nama_distributor' => 'New Balance',
+            'kota' => 'Bengkalis',
+            'provinsi' => 'Riau',
+            'kontak' => ('082244332211'),
+            'email' => 'teluremas@gmail.com',
         ]);
     }
 }

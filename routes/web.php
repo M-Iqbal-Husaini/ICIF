@@ -46,9 +46,13 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin/product/detail/{id}', [ProductController::class, 'detail'])->name('product.detail');
     Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
     Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
+
     Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
     // Discount Route
+    Route::post('/admin/product/{id}', [ProductController::class, 'update'])->name('admin.product.update');
+    Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+
     Route::get('/user/flash-sale', [UserController::class, 'flashSale'])->name('user.flashSale');
     Route::post('/admin/product/{productId}/set-discount', [AdminController::class, 'setDiscount'])->name('admin.setDiscount');
 
@@ -60,6 +64,7 @@ Route::group(['middleware' => 'admin'], function() {
 Route::group(['middleware' => 'web'], function() {
     Route::get('/user', [UserController::class, 'index'])->name('user.dashboard');
     Route::get('/user/flashsale', [UserController::class, 'fs'])->name('user.fs');
+
     Route::get('/user/product/detail/{id}', [UserController::class, 'detail_product'])->name('user.detail.product');
     Route::get('/product/purchase/{productId}/{userId}', [UserController::class, 'purchase']);
 

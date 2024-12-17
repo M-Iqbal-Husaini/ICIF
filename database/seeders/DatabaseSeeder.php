@@ -31,9 +31,9 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('123456789'),
         ]);
 
-        Distributor::create([
-            'nama_distributor' => 'Nike',
-            'kota' => 'Pekanbaru',
+        /*Distributor::create([
+            'nama_ukm' => 'UKM Olahraga',
+            'divisi' => 'E-Sport','Sepak Bola','Futsal','Voli','Badminton'
             'provinsi' => 'Riau',
             'kontak' => ('081344332211'),
             'email' => 'daunemas@gmail.com',
@@ -45,6 +45,6 @@ class DatabaseSeeder extends Seeder
             'provinsi' => 'Riau',
             'kontak' => ('082244332211'),
             'email' => 'teluremas@gmail.com',
-        ]);
+        ]);*/
     }
 }

@@ -1,19 +1,7 @@
 @extends('layouts.user.main')
 @section('content')
 
-<!-- Start Flash Sale Banner Area -->
-<section class="banner-area" style="background-image: url('{{ asset('assets/templates/user/img/banner/banner-bg.jpg') }}'); background-size: cover; background-position: center;">
-    <div class="container">
-        <div class="row fullscreen align-items-center justify-content-center">
-            <div class="col-lg-8 text-center">
-                <div class="banner-content">
-                    <h1>Flash Sale - Up to 50% OFF!</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Flash Sale Banner Area -->
+
 
 <!-- Start Product Area -->
 <section class="section_gap">
@@ -21,8 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
                 <div class="section-title">
-                    <h1>Flash Sale Products</h1>
-                    <p>Get the best deals while they last! Hurry up and grab your favorites.</p>
+                    <h1>Daftar UKM Polbeng</h1>
                 </div>
             </div>
         </div>

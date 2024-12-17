@@ -4,11 +4,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Ukm;
 use App\Imports\DistributorImport;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\DistributorController;
+use App\Http\Controllers\Admin\UkmController;
 
 
 // Guest Route
@@ -29,7 +31,7 @@ Route::group(['middleware' => 'admin'], function() {
 
     Route::get('/admin', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
-    // Distributor
+    /*// Distributor
     Route::get('/distributor', [DistributorController::class, 'index'])->name('admin.distributor');
     Route::post('/distributor/import', [DistributorController::class, 'import'])->name('distributor.import');
     Route::get('/distributor/export', [DistributorController::class, 'export'])->name('distributor.export');
@@ -46,7 +48,6 @@ Route::group(['middleware' => 'admin'], function() {
     Route::get('/admin/product/detail/{id}', [ProductController::class, 'detail'])->name('product.detail');
     Route::get('/product/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
     Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
-
     Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
     // Discount Route
@@ -54,7 +55,16 @@ Route::group(['middleware' => 'admin'], function() {
     Route::delete('/product/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
     Route::get('/user/flash-sale', [UserController::class, 'flashSale'])->name('user.flashSale');
-    Route::post('/admin/product/{productId}/set-discount', [AdminController::class, 'setDiscount'])->name('admin.setDiscount');
+    Route::post('/admin/product/{productId}/set-discount', [AdminController::class, 'setDiscount'])->name('admin.setDiscount');*/
+
+    // Product Route
+    Route::get('/ukm', [UkmController::class, 'index'])->name('admin.ukm');
+    Route::get('/ukm/create', [UkmController::class, 'create'])->name('ukm.create');
+    Route::post('/ukm/store', [UkmController::class, 'store'])->name('ukm.store');
+    Route::get('/ukm/product/detail/{id}', [UkmController::class, 'detail'])->name('ukm.detail');
+    Route::get('/ukm/edit/{id}', [UkmController::class, 'edit'])->name('ukm.edit');
+    Route::post('/ukm/update/{id}', [UkmController::class, 'update'])->name('ukm.update');
+    Route::delete('/ukm/delete/{id}', [UkmController::class, 'delete'])->name('ukm.delete');
 
 
     Route::get('/admin-logout', [AuthController::class, 'admin_logout'])->name('admin.logout');

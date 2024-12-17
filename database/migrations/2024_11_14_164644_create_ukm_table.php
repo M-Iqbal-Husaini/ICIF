@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('ukm', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_distributor');
-            $table->string('name');
-            $table->bigInteger('price');
-            $table->string('category');
+            $table->string('nama_ukm');
+            $table->enum('divisi', ['E-Sport', 'Sepak Bola', 'Futsal', 'Badminton', 'Catur', 'Voli']) ->change();
             $table->text('description');
             $table->string('image');
-            $table->integer('discount')->nullable();
             $table->timestamps();
         });
     }

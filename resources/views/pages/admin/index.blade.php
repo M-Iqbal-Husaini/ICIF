@@ -38,7 +38,7 @@
                                 <h4>Total Produk</h4>
                             </div>
                             <div class="card-body">
-                                {{ $products }}
+                                {{ $ukms }}
                             </div>
                         </div>
                     </div>
